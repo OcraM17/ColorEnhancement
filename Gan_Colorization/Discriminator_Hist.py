@@ -21,11 +21,11 @@ class D_Hist(torch.nn.Module):
     def __init__(self,livab,livL,img_size=None):
         super().__init__()
         self.img_size=img_size
-        self.ab=torch.nn.Linear(livab*livab,128)
-
         if self.img_size is not None:
             self.L=torch.nn.Linear(img_size*img_size*livL,128)
+            self.ab = torch.nn.Linear(img_size * img_size * livab * livab, 128)
         else:
+            self.ab = torch.nn.Linear(livab * livab, 128)
             self.L = torch.nn.Linear(livL, 128)
 
         self.vector=torch.nn.Linear(1000,128)
@@ -40,7 +40,6 @@ class D_Hist(torch.nn.Module):
         else:
             ab = img_ab.view(-1, img_ab.size(1) * img_ab.size(2))
             L = img_l.view(-1, img_l.size(1))
-
 
         ab=F.leaky_relu(self.ab(ab))
         L=F.leaky_relu(self.L(L))

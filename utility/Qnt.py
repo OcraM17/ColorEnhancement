@@ -19,10 +19,10 @@ def quantRGB(bins,vmax=255,vmin=0):
 def quantL(bins,vmax,vmin):
     a = torch.linspace(vmin+((vmax-vmin)/(bins*2)), vmax-((vmax-vmin)/(bins*2)), bins)
     mat = a
-    return mat.view(1,bins,1,1,1)
+    return mat.view(1,bins,1,1)
 
 
-def quantAB(bins, vmin, vmax):
+def quantAB(bins, vmax,vmin):
     a = torch.linspace(vmin+((vmax-vmin)/(bins*2)), vmax-((vmax-vmin)/(bins*2)), bins)
     mat=torch.cartesian_prod(a,a)
     return mat.view(1,bins**2,2,1,1)
