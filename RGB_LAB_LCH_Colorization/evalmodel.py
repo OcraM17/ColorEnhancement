@@ -28,12 +28,12 @@ def compute_errors(x, y):
 
 
 def main(args):
-    ldata = torch.load(args['model_path'])
+    ldata = torch.load(os.path.join(args['output_dir'], "model.pt"))
     basis = ldata["args"]['basis']
     param = ldata["args"]['param']
     net = model.create_net(basis, param)
     net.load_state_dict(ldata["model"])
-    net.to(args['device'])
+    #net.to(args['device'])
     dataset = data.FiveKDataset(args['test_list'], args['raw_dir'],
                                 args['expert_dir'], False, args['image_size'],
                                 filenames=True)
@@ -79,25 +79,21 @@ def main(args):
     print("{:.2f}".format(sum(l)/len(l)))
 
 if __name__ == "__main__":
-    DEFAULT_TRAINING_LIST = "/Users/marco/PycharmProjects/fivek/train1+2-list.txt"
     DEFAULT_RAW_DIR = "/Users/marco/PycharmProjects/fivek/raw"
     DEFAULT_EXPERT_DIR = "/Users/marco/PycharmProjects/fivek/expC"
-    DEFAULT_VAL_LIST = "/Users/marco/PycharmProjects/fivek/test-list.txt"
+    DEFAULT_TEST_LIST = "/Users/marco/PycharmProjects/fivek/test-list.txt"
     DEFAULT_OUTPUT_DIR="/Users/marco/PycharmProjects/fivek/output"
     MODEL_PATH='../'
     args={
         'basis':'splines',
         'param':10,
         'output_dir':DEFAULT_OUTPUT_DIR,
-        'training_list':DEFAULT_TRAINING_LIST,
+        'test_list':DEFAULT_TEST_LIST,
         'raw_dir':DEFAULT_RAW_DIR,
         'expert_dir': DEFAULT_EXPERT_DIR,
         'image_size':256,
-        'iterations':150000,
         'save_every':25000,
         'start_from':None,
-        'validation_list':DEFAULT_VAL_LIST,
-        'validate_every':1000,
         'batch_size':4,
         'learning_rate':1e-3,
         'weight_decay':1e-5,
