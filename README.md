@@ -28,7 +28,7 @@ This choice was very effective as is possible to observe from the results.
 
 # Results
 The Dataset used is the MIT-Adobe FiveK Dataset. It is composed of 5000 images in the RAW format. For each of these images five enhanced version are provided (each version of the images was retouched by one among five different experts).
-Here are available the results of best approach among the implemented, i.e. the Gan colorization.
+Here are available the results of best approach among the implemented, i.e. the Gan colorization.(first row, second row expert, third row RAW)
 <p float="center">
 <img src="https://github.com/OcraM17/ColorEnhancement/blob/master/results/enhanced/2024.png" width="160" height="160">
 <img src="https://github.com/OcraM17/ColorEnhancement/blob/master/results/enhanced/4061.png" width="160" height="160">
