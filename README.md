@@ -17,7 +17,7 @@ First of all, we converted the RGB enhanced image (and the gt-image) in the LAB 
 For the LAB color space we decided to repeat the quantization process for the channels A and B obtaining the AB crossentropy-loss. For the L channel we computed the euclidean distance between the L channel of the enhanced image and the L channel of the gt-image. We computed the overall loss as the weighted sum of the two loss components.
 
 ### Lab Relu Softmax
-To increase the value of high probable bins in the histogram, we decided to implement the Relu quantization. With this choice, the high probable bin has the highr value, its nearest bins have a 'medium value' and the the farest bins have a very low value (almost 0). This increased the performance of the algorithm.
+To increase the value of high probable bins in the histogram, we decided to implement the Relu quantization [3]. With this choice, the high probable bin has the highr value, its nearest bins have a 'medium value' and the the farest bins have a very low value (almost 0). This increased the performance of the algorithm.
 
 ## LCH Quantization Loss
 The RGB enhanced image (and gt) was converted in the LCH color space. For the L and C channels, we computed the euclidean distance between the enhanced and gt-image. Then we quantized and converted the H channel to distribution. The final H loss was computed as the crossentropy between the distribution of the H channel of the enhanced image and the distribution of the H channel of the gt-image. Then we computed the final loss as the weighted sum of the L, C and H losses.
@@ -55,6 +55,7 @@ Here are available the results of best approach among the implemented, i.e. the 
 ## References
 [1] Bianco, Simone, et al. "Learning parametric functions for color image enhancement." International Workshop on Computational Color Imaging. Springer, Cham, 2019. \
 [2] Zhang, Richard, Phillip Isola, and Alexei A. Efros. "Colorful image colorization." European conference on computer vision. Springer, Cham, 2016. \
+[3] ref
 [4] Goodfellow, Ian J., et al. "Generative adversarial networks." arXiv preprint arXiv:1406.2661 (2014). \
 [5] He, Kaiming, et al. "Deep residual learning for image recognition." Proceedings of the IEEE conference on computer vision and pattern recognition. 2016. \
 [6] V. Bychkovsky, S. Paris, E. Chan, and F. Durand. "Learning Photographic Global Tonal Adjustment with a Database of Input / Output Image Pairs" IEEE Computer Vision and Pattern Recognition (CVPR). June 2011, Colorado Springs, CO.
