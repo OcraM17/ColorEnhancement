@@ -28,7 +28,8 @@ This choice was very effective as is possible to observe from the results.
 
 # Results
 The Dataset used is the MIT-Adobe FiveK Dataset. It is composed of 5000 images in the RAW format. For each of these images five enhanced version are provided (each version of the images was retouched by one among five different experts).
-Here are available the results of 
+Here are available the results of best approach among the implemented, i.e. the Gan colorization.
+
 
 ## References
 [1] Bianco, Simone, et al. "Learning parametric functions for color image enhancement." International Workshop on Computational Color Imaging. Springer, Cham, 2019. \
