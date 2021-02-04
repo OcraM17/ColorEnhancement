@@ -55,7 +55,7 @@ Here are available the results of best approach among the implemented, i.e. the 
 ## References
 [1] Bianco, Simone, et al. "Learning parametric functions for color image enhancement." International Workshop on Computational Color Imaging. Springer, Cham, 2019. \
 [2] Zhang, Richard, Phillip Isola, and Alexei A. Efros. "Colorful image colorization." European conference on computer vision. Springer, Cham, 2016. \
-[3] ref
+[3] ref \
 [4] Goodfellow, Ian J., et al. "Generative adversarial networks." arXiv preprint arXiv:1406.2661 (2014). \
 [5] He, Kaiming, et al. "Deep residual learning for image recognition." Proceedings of the IEEE conference on computer vision and pattern recognition. 2016. \
 [6] V. Bychkovsky, S. Paris, E. Chan, and F. Durand. "Learning Photographic Global Tonal Adjustment with a Database of Input / Output Image Pairs" IEEE Computer Vision and Pattern Recognition (CVPR). June 2011, Colorado Springs, CO.
