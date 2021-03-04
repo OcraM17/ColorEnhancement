@@ -40,10 +40,11 @@ class FiveKDataset(data.Dataset):
     def __getitem__(self, index):
         raw = Image.open(self.file_list[index][0])
         expert =  Image.open(self.file_list[index][1])
+        raw_exp = self.transform(torch.stack([raw, expert]))
         if self.filenames:
-            return self.transform(raw), self.transform(expert), self.file_list[index][2]
+            return raw_exp[0],raw_exp[1], self.file_list[index][2]
         else:
-            return self.transform(raw), self.transform(expert)
+            return raw_exp[0],raw_exp[1]
 
 
 def _test():
